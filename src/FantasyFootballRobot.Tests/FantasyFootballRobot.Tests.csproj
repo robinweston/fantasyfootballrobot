@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0146897E-89E6-4E12-92CC-40445A54BB72}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FantasyFootballRobot.Tests</RootNamespace>
+    <AssemblyName>FantasyFootballRobot.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.0.0\lib\net40-client\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.0.5\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.mocks">
+      <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="pnunit.framework">
+      <HintPath>..\packages\NUnit.2.5.10.11092\lib\pnunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\DependencyInjection\DependencyInjectionTests.cs" />
+    <Compile Include="Core\Entities\Json\JsonPlayerTests.cs" />
+    <Compile Include="Core\Entities\PlayerCloningTests.cs" />
+    <Compile Include="Core\Entities\TeamClonerTests.cs" />
+    <Compile Include="Core\Extensions\NumericExtensionsTests.cs" />
+    <Compile Include="Core\Extensions\TimeSpanExtensionsTests.cs" />
+    <Compile Include="Core\Mapping\AutoMapperConfigurationTests.cs" />
+    <Compile Include="Core\Mapping\PlayerMappingTests.cs" />
+    <Compile Include="Core\Mapping\Season12_13Mapping.cs" />
+    <Compile Include="Core\Services\JsonParsingPlayerServiceTests.cs" />
+    <Compile Include="Core\Services\LocalPlayerJsonServiceTests.cs" />
+    <Compile Include="Core\Services\PlayerServiceTests.cs" />
+    <Compile Include="Core\Services\TimeAdjustorTests.cs" />
+    <Compile Include="Core\Simulators\DecisionActionerTests.cs" />
+    <Compile Include="Core\Simulators\GameweekSimulatorTests.cs" />
+    <Compile Include="Core\Simulators\SeasonSimulatorTests.cs" />
+    <Compile Include="Core\Simulators\SeasonStateCloningTests.cs" />
+    <Compile Include="Core\Simulators\TransferActionerTests.cs" />
+    <Compile Include="Core\Simulators\TransferValidatorTests.cs" />
+    <Compile Include="Core\Strategies\Complex\ComplexStrategyTests.cs" />
+    <Compile Include="Core\Strategies\Complex\Prediction\HomeAdvantageCalculatorTests.cs" />
+    <Compile Include="Core\Strategies\Complex\Prediction\PlayerFormCalculatorTests.cs" />
+    <Compile Include="Core\Strategies\Complex\Prediction\PlayerScorePredictorTests.cs" />
+    <Compile Include="Core\Strategies\Complex\Prediction\TeamScorePredictorTests.cs" />
+    <Compile Include="Core\Strategies\Complex\Prediction\TeamStrengthCalculatorTests.cs" />
+    <Compile Include="Core\Strategies\Complex\Selection\Gameweek\TeamGameweekSelectorTests.cs" />
+    <Compile Include="Core\Strategies\Complex\Selection\SeasonStart\GeneticTeamSelectorTests.cs" />
+    <Compile Include="Core\Strategies\Complex\Selection\SeasonStart\InitialTeamSelectorStrategyTests.cs" />
+    <Compile Include="Core\Strategies\Complex\Selection\SeasonStart\PlayerPoolReducerTests.cs" />
+    <Compile Include="Core\Strategies\Complex\Transfers\GeneticTransferSelectorTests.cs" />
+    <Compile Include="Core\Strategies\Complex\Transfers\TransferSelectorStrategyTests.cs" />
+    <Compile Include="Core\Strategies\Genetic\GeneticAlgorithmBaseTests.cs" />
+    <Compile Include="Core\Strategies\Genetic\GeneticStub.cs" />
+    <Compile Include="Core\Strategies\Genetic\StubChromosome.cs" />
+    <Compile Include="Core\Validation\TeamValidatorTests.cs" />
+    <Compile Include="Helpers\PlayerExtensions.cs" />
+    <Compile Include="Helpers\ResourceHelper.cs" />
+    <Compile Include="Helpers\TeamCreationHelper.cs" />
+    <Compile Include="Helpers\TestTransferHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestData\SampleGoalkeeperJson.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FantasyFootballRobot.Core\FantasyFootballRobot.Core.csproj">
+      <Project>{C618F3E3-1FAF-477C-B5F6-5EA8B51F080C}</Project>
+      <Name>FantasyFootballRobot.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestData\SampleDefenderJson.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="TestData\Season1213\SamplePlayerJson.txt" />
+    <Content Include="TestData\dummy.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

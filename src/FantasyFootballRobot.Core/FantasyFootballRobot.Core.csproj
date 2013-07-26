@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C618F3E3-1FAF-477C-B5F6-5EA8B51F080C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FantasyFootballRobot.Core</RootNamespace>
+    <AssemblyName>FantasyFootballRobot.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.0.0\lib\net40-client\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.0.5\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\ICacher.cs" />
+    <Compile Include="Configuration\ConfigurationSettings.cs" />
+    <Compile Include="Configuration\IConfigurationSettings.cs" />
+    <Compile Include="Constants\GameConstants.cs" />
+    <Compile Include="Contracts\IDataStorageFactory.cs" />
+    <Compile Include="Contracts\IDataStorageSession.cs" />
+    <Compile Include="DependencyInjection\ContainerBuilder.cs" />
+    <Compile Include="Entities\PerformanceBase.cs" />
+    <Compile Include="Entities\PlayerGameweekPerformance.cs" />
+    <Compile Include="Entities\Season.cs" />
+    <Compile Include="Entities\Club.cs" />
+    <Compile Include="Entities\FutureFixture.cs" />
+    <Compile Include="Entities\Json\JsonFixtureHistory.cs" />
+    <Compile Include="Entities\Json\JsonFixtures.cs" />
+    <Compile Include="Entities\Json\JsonClassHelper.cs" />
+    <Compile Include="Entities\Json\JsonPlayer.cs" />
+    <Compile Include="Entities\PastFixture.cs" />
+    <Compile Include="Entities\Player.cs" />
+    <Compile Include="Entities\Position.cs" />
+    <Compile Include="Entities\Status.cs" />
+    <Compile Include="Entities\Team.cs" />
+    <Compile Include="Entities\TeamCloner.cs" />
+    <Compile Include="Entities\Utilities\Cloning\ClonerHelpers.cs" />
+    <Compile Include="Entities\Utilities\Cloning\ExpressionTreeCloner.cs" />
+    <Compile Include="Entities\Utilities\Cloning\ExpressionTreeCloner.FieldBased.cs" />
+    <Compile Include="Entities\Utilities\Cloning\ExpressionTreeCloner.PropertyBased.cs" />
+    <Compile Include="Entities\Utilities\Cloning\ICloneFactory.cs" />
+    <Compile Include="Entities\Utilities\Cloning\IDeepCloneable.cs" />
+    <Compile Include="Entities\Utilities\Cloning\IShallowCloneable.cs" />
+    <Compile Include="Exceptions\GeneticAlgorithmException.cs" />
+    <Compile Include="Exceptions\InvalidTeamException.cs" />
+    <Compile Include="Exceptions\InvalidTransferException.cs" />
+    <Compile Include="Exceptions\StandardWildcardException.cs" />
+    <Compile Include="Exceptions\TeamNotFoundException.cs" />
+    <Compile Include="Exceptions\TimeAdjustorException.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Extensions\NumericExtensions.cs" />
+    <Compile Include="Extensions\LinqExtensions.cs" />
+    <Compile Include="Extensions\TimespanExtensions.cs" />
+    <Compile Include="Logging\CsvLogger.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\ConsoleLogger.cs" />
+    <Compile Include="Logging\ImportantTextFileLogger.cs" />
+    <Compile Include="Logging\LoggerBase.cs" />
+    <Compile Include="Logging\LogHelper.cs" />
+    <Compile Include="Logging\Tag.cs" />
+    <Compile Include="Logging\TextFileLogger.cs" />
+    <Compile Include="Mapping\FixtureDateHelper.cs" />
+    <Compile Include="Mapping\FutureFixturesResolver.cs" />
+    <Compile Include="Mapping\MappingConfiguration.cs" />
+    <Compile Include="Mapping\PastFixturesResolver.cs" />
+    <Compile Include="Mapping\PerformanceMappingHelper.cs" />
+    <Compile Include="Mapping\PastSeasonsResolver.cs" />
+    <Compile Include="Mapping\PlayerNameResolver.cs" />
+    <Compile Include="Mapping\PositionResolver.cs" />
+    <Compile Include="Mapping\PlayerStatusResolver.cs" />
+    <Compile Include="Mapping\TeamNameResolver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IMultiplePlayersService.cs" />
+    <Compile Include="Simulators\CommonTransferFunctions.cs" />
+    <Compile Include="Simulators\DecisionActioner.cs" />
+    <Compile Include="Simulators\ITransferActioner.cs" />
+    <Compile Include="Simulators\ITransferValidator.cs" />
+    <Compile Include="Simulators\SeasonSimulationOptions.cs" />
+    <Compile Include="Simulators\StrategyDecisionsResult.cs" />
+    <Compile Include="Simulators\TransferActioner.cs" />
+    <Compile Include="Simulators\TransferActionsResult.cs" />
+    <Compile Include="Simulators\IDecisionActioner.cs" />
+    <Compile Include="Simulators\ISeasonSimulator.cs" />
+    <Compile Include="Simulators\ITimeAdjustor.cs" />
+    <Compile Include="Services\IPlayerJsonService.cs" />
+    <Compile Include="Services\ISinglePlayerService.cs" />
+    <Compile Include="Services\JsonParsingSinglePlayerService.cs" />
+    <Compile Include="Services\LocalPlayerJsonService.cs" />
+    <Compile Include="Services\PlayerService.cs" />
+    <Compile Include="Services\RemotePlayerJsonService.cs" />
+    <Compile Include="Simulators\IGameweekSimulator.cs" />
+    <Compile Include="Simulators\GameweekSimulator.cs" />
+    <Compile Include="Simulators\SeasonSimulationResult.cs" />
+    <Compile Include="Simulators\SeasonSimulator.cs" />
+    <Compile Include="Simulators\SeasonState.cs" />
+    <Compile Include="Simulators\TeamGameweekPerformance.cs" />
+    <Compile Include="Simulators\TimeAdjustor.cs" />
+    <Compile Include="Simulators\TransferValidator.cs" />
+    <Compile Include="Simulators\TransferValidity.cs" />
+    <Compile Include="Strategies\Basic\BasicStrategy.cs" />
+    <Compile Include="Strategies\Complex\ComplexStrategy.cs" />
+    <Compile Include="Strategies\Complex\Parameters\IPredictorParameters.cs" />
+    <Compile Include="Strategies\Complex\Parameters\IInitialTeamSelectionParameters.cs" />
+    <Compile Include="Strategies\Complex\Parameters\InitialTeamSelectionParameters.cs" />
+    <Compile Include="Strategies\Complex\Parameters\PredictorParameters.cs" />
+    <Compile Include="Strategies\Complex\Prediction\IPlayerScorePredictor.cs" />
+    <Compile Include="Strategies\Complex\Prediction\LocationAdvantageCalculator.cs" />
+    <Compile Include="Strategies\Complex\Prediction\HomeAdvantageResult.cs" />
+    <Compile Include="Strategies\Complex\Prediction\ILocationAdvantageCalculator.cs" />
+    <Compile Include="Strategies\Complex\Prediction\IPlayerFormCalculator.cs" />
+    <Compile Include="Strategies\Complex\Prediction\ITeamScorePredictor.cs" />
+    <Compile Include="Strategies\Complex\Prediction\PlayerForm.cs" />
+    <Compile Include="Strategies\Complex\Prediction\PlayerFormCalculator.cs" />
+    <Compile Include="Strategies\Complex\Prediction\PlayerScorePredictor.cs" />
+    <Compile Include="Strategies\Complex\Prediction\TeamScorePredictor.cs" />
+    <Compile Include="Strategies\Complex\Prediction\TeamStrength.cs" />
+    <Compile Include="Strategies\Complex\Prediction\TeamStrengthCalculator.cs" />
+    <Compile Include="Strategies\Complex\Selection\Gameweek\ITeamGameweekSelector.cs" />
+    <Compile Include="Strategies\Complex\Selection\Gameweek\PredictedPlayerScore.cs" />
+    <Compile Include="Strategies\Complex\Selection\Gameweek\TeamGameweekSelector.cs" />
+    <Compile Include="Strategies\Complex\Selection\Gameweek\TeamSelection.cs" />
+    <Compile Include="Strategies\Complex\Selection\SeasonStart\FitTeam.cs" />
+    <Compile Include="Strategies\Complex\Selection\SeasonStart\GeneticTeamSelector.cs" />
+    <Compile Include="Strategies\Complex\Selection\SeasonStart\IInitialTeamSelectorStrategy.cs" />
+    <Compile Include="Strategies\Complex\Selection\SeasonStart\InitialTeamSelectorStrategy.cs" />
+    <Compile Include="Strategies\Complex\Prediction\ITeamStrengthCalculator.cs" />
+    <Compile Include="Strategies\Complex\Selection\SeasonStart\IPlayerPoolReducer.cs" />
+    <Compile Include="Strategies\Complex\Selection\SeasonStart\PlayerPoolReducer.cs" />
+    <Compile Include="Strategies\Complex\Transfers\FitTransferActions.cs" />
+    <Compile Include="Strategies\Complex\Transfers\GeneticTransferSelector.cs" />
+    <Compile Include="Strategies\Complex\Transfers\ITransferSelectorStrategy.cs" />
+    <Compile Include="Strategies\Complex\Transfers\TransferSelectorStrategy.cs" />
+    <Compile Include="Strategies\Genetic\IChromosome.cs" />
+    <Compile Include="Strategies\Genetic\IGeneticAlgorithm.cs" />
+    <Compile Include="Strategies\Genetic\IGeneticParameters.cs" />
+    <Compile Include="Strategies\Genetic\GeneticAlgorithmBase.cs" />
+    <Compile Include="Strategies\ILoggable.cs" />
+    <Compile Include="Strategies\IRandom.cs" />
+    <Compile Include="Strategies\RandomWrapper.cs" />
+    <Compile Include="Strategies\TransferActions.cs" />
+    <Compile Include="Strategies\IStrategy.cs" />
+    <Compile Include="Strategies\Transfer.cs" />
+    <Compile Include="Utils\InfinitePartitioner.cs" />
+    <Compile Include="Utils\ParallelUtils.cs" />
+    <Compile Include="Validation\TeamValidator.cs" />
+    <Compile Include="Validation\TeamValidationStatus.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
